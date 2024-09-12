@@ -13,7 +13,7 @@ import java.nio.charset.Charset;
 public class Main {
     public static void main(String[] args)
     {
-        File textFile=new File("src/main/resources/text.txt");
+       /* File textFile=new File("src/main/resources/text.txt");
         String fileContent=new String();
         try {
             fileContent=FileUtils.readFileToString(textFile, (Charset) null);
@@ -42,7 +42,10 @@ public class Main {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-        }
+        }*/
+        IEven even=(Integer a)->{return a%2==0;};
+        IOdd odd=(Integer b)->{return b%2==1;};
+        ITalk talk=()->{return "bla bla";};
 
     }
 }
