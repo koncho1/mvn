@@ -9,6 +9,8 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.nio.charset.Charset;
+import java.util.concurrent.Callable;
+import java.util.concurrent.FutureTask;
 
 public class Main {
     public static void main(String[] args)
@@ -46,6 +48,12 @@ public class Main {
         IEven even=(Integer a)->{return a%2==0;};
         IOdd odd=(Integer b)->{return b%2==1;};
         ITalk talk=()->{return "bla bla";};
+
+        new Thread(new Thread1()).start();
+        new Thread2().start();
+        Callable callable=new Thread3();
+        FutureTask task=new FutureTask(callable);
+        new Thread(task).start();
 
     }
 }
